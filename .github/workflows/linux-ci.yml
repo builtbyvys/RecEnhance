@@ -1,0 +1,31 @@
+name: Linux CI
+
+on:
+  push:
+    paths:
+      - 'shared/**'
+      - 'linux/**'
+      - '.github/workflows/linux-ci.yml'
+  pull_request:
+    paths:
+      - 'shared/**'
+      - 'linux/**'
+      - '.github/workflows/linux-ci.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 8.0.x
+    - name: Build Shared Code
+      run: ./gradlew :shared:build
+    - name: Restore dependencies
+      run: dotnet restore ./linux/LinuxApp.csproj
+    - name: Build
+      run: dotnet build ./linux/LinuxApp.csproj --no-restore
+    - name: Test
+      run: dotnet test ./linux/LinuxApp.csproj --no-build --verbosity normal

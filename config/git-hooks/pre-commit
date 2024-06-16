@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "Running pre-commit checks..."
+
+# Run ktlint
+./gradlew ktlint
+
+# Run detekt
+./gradlew detekt
+
+# Check for SNAPSHOT dependencies
+if grep -R "SNAPSHOT" **/build.gradle **/build.gradle.kts; then
+    echo "Error: SNAPSHOT dependencies detected"
+    exit 1
+fi
+
+echo "Pre-commit checks passed!"
