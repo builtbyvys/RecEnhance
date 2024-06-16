@@ -1,0 +1,6 @@
+[submodule "wpfui"]
+	path = wpfui
+	url = https://github.com/lepoco/wpfui
+[submodule "Avalonia"]
+	path = Avalonia
+	url = https://github.com/AvaloniaUI/Avalonia

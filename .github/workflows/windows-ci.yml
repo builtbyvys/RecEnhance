@@ -1,0 +1,31 @@
+name: Windows CI
+
+on:
+  push:
+    paths:
+      - 'shared/**'
+      - 'windows/**'
+      - '.github/workflows/windows-ci.yml'
+  pull_request:
+    paths:
+      - 'shared/**'
+      - 'windows/**'
+      - '.github/workflows/windows-ci.yml'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 8.0.x
+    - name: Build Shared Code
+      run: ./gradlew :shared:build
+    - name: Restore dependencies
+      run: dotnet restore ./windows/WindowsApp.csproj
+    - name: Build
+      run: dotnet build ./windows/WindowsApp.csproj --no-restore
+    - name: Test
+      run: dotnet test ./windows/WindowsApp.csproj --no-build --verbosity normal
