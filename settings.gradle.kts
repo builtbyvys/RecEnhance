@@ -9,4 +9,3 @@ pluginManagement {
 rootProject.name = "RecEnhanced"
 include(":android")
 include(":shared")
-include(":desktop")
