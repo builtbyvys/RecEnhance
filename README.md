@@ -6,6 +6,10 @@ It plans to bring needed features that are either not planned or not implemented
 > **This is currently not functional, as I have yet to build the blocks to have this be put out in production.
 > You can think of this as a roadmap for what to expect.**
 
+[![Windows CI](https://github.com/builtbyvys/RecEnhance/actions/workflows/windows-ci.yml/badge.svg)](https://github.com/builtbyvys/RecEnhance/actions/workflows/winows-ci.yml)
+[![Linux CI](https://github.com/builtbyvys/RecEnhance/actions/workflows/linux-ci.yml/badge.svg)](https://github.com/builtbyvys/RecEnhance/actions/workflows/linux-ci.yml)
+[![Android CI](https://github.com/builtbyvys/RecEnhance/actions/workflows/android-ci.yml/badge.svg)](https://github.com/builtbyvys/RecEnhance/actions/workflows/android-ci.yml)
+[![iOS CI](https://github.com/builtbyvys/RecEnhance/actions/workflows/ios-ci.yml/badge.svg)](https://github.com/builtbyvys/RecEnhance/actions/workflows/ios-ci.yml)
 # Features
 - Efficiently manage different social aspects of your profile
 - Get relative and accurate information for specific rounded fields (join date, offline since, etc.)
