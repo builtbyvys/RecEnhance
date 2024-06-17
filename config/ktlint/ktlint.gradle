@@ -1,21 +1,11 @@
-configurations {
-    ktlint
-}
+apply plugin: 'org.jlleitschuh.gradle.ktlint'
 
-dependencies {
-    ktlint "com.pinterest:ktlint:0.42.1"
-}
-
-task ktlint(type: JavaExec, group: "verification") {
-    description = "Check Kotlin code style."
-    classpath = configurations.ktlint
-    main = "com.pinterest.ktlint.Main"
-    args "src/**/*.kt", "**/*.kts", "!**/build/**"
-}
-
-task ktlintFormat(type: JavaExec, group: "formatting") {
-    description = "Fix Kotlin code style deviations."
-    classpath = configurations.ktlint
-    main = "com.pinterest.ktlint.Main"
-    args "-F", "src/**/*.kt", "**/*.kts", "!**/build/**"
+ktlint {
+    version = "0.47.2"
+    debug = false
+    verbose = false
+    filter {
+        include("**/*.kt")
+        exclude("**/generated/**")
+    }
 }

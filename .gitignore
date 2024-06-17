@@ -29,3 +29,5 @@ obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+# Ignore Gradle build output directory
+build

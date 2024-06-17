@@ -40,7 +40,7 @@ object Dependencies {
     const val androidConstraintLayout = "androidx.constraintlayout:constraintlayout:2.1.4"
     const val androidLifecycleRuntimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:2.6.2"
     const val androidActivityKtx = "androidx.activity:activity-ktx:1.7.2"
-    
+
     // Testing
     const val junit = "junit:junit:4.13.2"
     const val mockk = "io.mockk:mockk:1.13.5"

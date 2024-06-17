@@ -9,7 +9,7 @@ echo "Running pre-commit checks..."
 ./gradlew detekt
 
 # Check for SNAPSHOT dependencies
-if grep -R "SNAPSHOT" **/build.gradle **/build.gradle.kts; then
+if grep -R "SNAPSHOT" ./**/build.gradle ./**/build.gradle.kts; then
     echo "Error: SNAPSHOT dependencies detected"
     exit 1
 fi
